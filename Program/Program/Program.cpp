@@ -83,7 +83,7 @@ public:
 			}
 			tailNode->next = newNode;
 		}
-		size++
+		size++;
 	}
 	void pop_back()
 	{
@@ -108,6 +108,10 @@ public:
 			delete delNode;
 			size--;
 		}
+	}
+	bool empty()
+	{
+		return (head == nullptr);
 	}
 };
 
