@@ -18,6 +18,7 @@ private:
 
 public:
 	List()
+
 	{
 		size = 0;
 		head = NULL;
