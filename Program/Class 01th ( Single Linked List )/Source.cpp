@@ -123,24 +123,35 @@ public:
 		{
 			Node* delNode = head;
 			Node* preNode = head;
-			while (preNode != nullptr)
+			if (size == 1)
 			{
-				if (delNode->data == data)
+				head = nullptr;
+				delete delNode;
+				size--;
+			}
+			else
+			{
+				while (preNode != nullptr)
 				{
-					if (delNode == head)
+					if (delNode->data == data)
 					{
-						head = delNode->next;
+						if (delNode == head)
+						{
+							head = delNode->next;
+						}
+						else
+						{
+							preNode->next = delNode->next;
+						}
+						delete delNode;
+						size--;
+						delNode = head;
+						//return;
 					}
-					else
-					{
-						preNode->next = delNode->next;
-					}
-					delete delNode;
-					size--;
-					delNode = head;
+					preNode = delNode;
+					//if( size != 1)
+					delNode = delNode->next;
 				}
-				preNode = delNode;
-				delNode = delNode->next;
 			}
 		}
 	}
@@ -152,7 +163,7 @@ int main()
 {
 	List<int> list;
 	list.push_front(10);
-	list.push_front(20);
+	list.Remove(10);
 
 
 	return 0;
