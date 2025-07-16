@@ -3,76 +3,33 @@
 using namespace std;
 
 template <typename T>
-class List
+
+class CircleList
 {
 private:
 	int size;
 	struct Node
 	{
-		T data = NULL;
-		Node* prev = nullptr;
-		Node* next = nullptr;
+		T data;
+		Node* next;
+		Node()
+		{
+			data = NULL;
+			next = nullptr;
+		}
 	};
 	Node* head;
-	Node* tail;
-
 public:
-	List()
+	CircleList()
 	{
 		size = 0;
 		head = nullptr;
-		tail = nullptr;
 	}
-	~List()
+	~CircleList()
 	{
-
 		while (head != nullptr)
 		{
 			pop_back();
-		}
-		if (head == nullptr)
-		{
-			cout << "다 지워졌습니다 " << endl;
-		}
-	}
-	void push_front(T data)
-	{
-		Node* newNode = new Node;
-		newNode->data = data;
-		if (head == nullptr)
-		{
-			tail = newNode;
-			head = newNode;
-		}
-		else
-		{
-			head->prev = newNode;
-			newNode->next = head;
-			head = newNode;
-		}
-		size++;
-	}
-	void pop_front()
-	{
-		if (head == nullptr)
-		{
-			cout << "데이터가 비어있습니다" << endl;
-		}
-		else
-		{
-			Node* delNode = head;
-			if (size == 1)
-			{
-				head = nullptr;
-				tail = nullptr;
-			}
-			else
-			{
-				head = delNode->next;
-				head->prev = nullptr;
-			}
-			delete delNode;
-			size--;
 		}
 	}
 	void push_back(T data)
@@ -82,57 +39,114 @@ public:
 		if (head == nullptr)
 		{
 			head = newNode;
-			tail = newNode;
+			newNode->next = head;
 		}
 		else
 		{
-			tail->next = newNode;
-			newNode->prev = tail;
-			tail = newNode;
+			newNode->next = head->next;
+			head->next = newNode;
+			head = newNode;
 		}
 		size++;
 	}
 	void pop_back()
 	{
-		if (tail == nullptr)
+		if (head == nullptr)
 		{
-			cout << "데이터가 이나인데스" << endl;
+			cout << "이미 비어있는 상태입니다." << endl;
 		}
 		else
 		{
-			Node* delNode = tail;
+			Node* delNode = head;
 			if (size == 1)
 			{
-				head = tail = nullptr;
+				head = nullptr;
 			}
 			else
 			{
-				tail = delNode->prev;
-				tail->next = nullptr;
+				Node* temp = head->next;
+				while (temp->next != head)
+				{
+					temp = temp->next;
+				}
+				head = temp;
+				head->next = delNode->next;
 			}
 			delete delNode;
 			size--;
 		}
 	}
-	bool empty()
+	void push_front(T data)
+	{
+		Node* newNode = new Node;
+		newNode->data = data;
+		if (head == nullptr)
+		{
+			head = newNode;
+			newNode->next = head;
+		}
+		else
+		{
+			newNode->next = head->next;
+			head->next = newNode;
+		}
+		size++;
+	}
+	void pop_front()
+	{
+		if (head == nullptr)
+		{
+			cout << "이미 비어있습니다" << endl;
+		}
+		else
+		{
+			Node* delNode = head->next;
+			if (size == 1)
+			{
+				head = nullptr;
+			}
+			else
+			{
+				head->next = delNode->next;
+			}
+			delete delNode;
+			size--;
+		}
+	}
+	void empty()
 	{
 		return size == 0;
+	}
+	void remove(T data)
+	{
+		Node* prevNode = head;
+		Node* delNode = head->next;
+		while (delNode != head)
+		{
+			if (delNode->data == data)
+			{
+				prevNode->next = delNode->next;
+				delete delNode;
+				delNode = prevNode->next;
+				size--;
+			}
+			else
+			{
+				prevNode = delNode;
+				delNode = delNode->next;
+			}
+		}
 	}
 };
 
 
-
 int main()
 {
-	List<int> list;
-
-	list.push_front(10);
+	CircleList<int> list;
+	list.push_back(10);
 	list.push_back(20);
-	
-	//list.pop_front();
-	//list.pop_back();
-	//list.pop_back();
-	cout << list.empty() << endl;
-	cout << "==========스택의 영역은 여기까지입니다==========" << endl;
+	list.push_back(40);
+	list.push_back(80);
+	list.push_front(5);
 	return 0;
 }

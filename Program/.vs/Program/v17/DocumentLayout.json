@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|solutionrelative:Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9F25F348-8131-452A-BF21-09F8A62867D9}|Class 02th ( Double Linked List )\\Class 02th ( Double Linked List ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 02th ( Double Linked List )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F25F348-8131-452A-BF21-09F8A62867D9}|Class 02th ( Double Linked List )\\Class 02th ( Double Linked List ).vcxproj|solutionrelative:Class 02th ( Double Linked List )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE4AF7D4-F626-4852-95B1-3F24CB996DA4}|Class 01th ( Single Linked List )\\Class 01th ( Single Linked List ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 01th ( Single Linked List )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BE4AF7D4-F626-4852-95B1-3F24CB996DA4}|Class 01th ( Single Linked List )\\Class 01th ( Single Linked List ).vcxproj|solutionrelative:Class 01th ( Single Linked List )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -18,17 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 02th ( Double Linked List )\\Source.cpp",
+              "RelativeDocumentMoniker": "Class 02th ( Double Linked List )\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 02th ( Double Linked List )\\Source.cpp",
+              "RelativeToolTip": "Class 02th ( Double Linked List )\\Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-16T05:13:26.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Source.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 01th ( Single Linked List )\\Source.cpp",
               "RelativeDocumentMoniker": "Class 01th ( Single Linked List )\\Source.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 01th ( Single Linked List )\\Source.cpp",
               "RelativeToolTip": "Class 01th ( Single Linked List )\\Source.cpp",
-              "ViewState": "AgIAAIEAAAAAAAAAAIAxwJEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAIAxwJYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-15T05:37:37.014Z",
               "EditorCaption": ""
@@ -41,7 +58,7 @@
               "RelativeDocumentMoniker": "Program\\Program.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp",
               "RelativeToolTip": "Program\\Program.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAIAxwHsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAUwIMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:10.402Z",
               "EditorCaption": ""

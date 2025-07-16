@@ -148,8 +148,8 @@ public:
 						delNode = head;
 						//return;
 					}
+					//if( size > 1)
 					preNode = delNode;
-					//if( size != 1)
 					delNode = delNode->next;
 				}
 			}
