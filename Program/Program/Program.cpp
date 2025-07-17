@@ -3,150 +3,89 @@
 using namespace std;
 
 template <typename T>
-
-class CircleList
+class Vector
 {
 private:
-	int size;
-	struct Node
-	{
-		T data;
-		Node* next;
-		Node()
-		{
-			data = NULL;
-			next = nullptr;
-		}
-	};
-	Node* head;
+	int dataSize;				// data가 저장된 벡터 크기
+	int capacity;			    // 최대 용량
+
 public:
-	CircleList()
+	T* container;				// 자료들 시작 주소 담는 포인터
+	Vector()
 	{
-		size = 0;
-		head = nullptr;
+		dataSize = 0;
+		capacity = 0;
+		container = nullptr;
 	}
-	~CircleList()
+	~Vector()
 	{
-		while (head != nullptr)
+		if (container != nullptr)
 		{
-			pop_back();
+			delete[] container;
 		}
+	}
+	void resize(int newSize)
+	{
+		// 1. capacity에 새로운 size값을 저장.
+		// 2. 새로운 포인터 변수를 생성, 새롭게 만들어진
+		//	  메모리 공간을 가리키도록 한다.
+		// 3. 새로운 메모리 공간의 값을 초기화한다.
+		// 4. 기존 배열에 있는 값을 복사해서 새로운 배열에 넣어줌.
+		// 5. 기존 배열의 메모리를 해제한다.
+		// 6. 기존 배열을 가리키던 포인터 변수의 주소를 새로운 배열의
+		//	  시작 주소로 변경한다.
+
+		capacity = newSize;
+
+		T* temp = new T[capacity];
+
+		for (int i = 0; i < capacity; i++)
+		{
+			temp[i] = NULL;
+		}
+		for (int i = 0; i < dataSize; i++)
+		{
+			temp[i] = container[i];
+		}
+		if (container != nullptr)
+		{
+			delete[] container;
+		}
+		container = temp;
 	}
 	void push_back(T data)
 	{
-		Node* newNode = new Node;
-		newNode->data = data;
-		if (head == nullptr)
+		if (container == nullptr)
 		{
-			head = newNode;
-			newNode->next = head;
+			resize(1);
+			container[capacity] = data;
+
+			dataSize++;
 		}
 		else
 		{
-			newNode->next = head->next;
-			head->next = newNode;
-			head = newNode;
-		}
-		size++;
-	}
-	void pop_back()
-	{
-		if (head == nullptr)
-		{
-			cout << "이미 비어있는 상태입니다." << endl;
-		}
-		else
-		{
-			Node* delNode = head;
-			if (size == 1)
+			if (capacity == dataSize)
 			{
-				head = nullptr;
+				resize(capacity * 2);
+				push_back(data);
 			}
 			else
 			{
-				Node* temp = head->next;
-				while (temp->next != head)
+				int index = 0;
+				while (container[index] != NULL)
 				{
-					temp = temp->next;
+					index++;
 				}
-				head = temp;
-				head->next = delNode->next;
-			}
-			delete delNode;
-			size--;
-		}
-	}
-	void push_front(T data)
-	{
-		Node* newNode = new Node;
-		newNode->data = data;
-		if (head == nullptr)
-		{
-			head = newNode;
-			newNode->next = head;
-		}
-		else
-		{
-			newNode->next = head->next;
-			head->next = newNode;
-		}
-		size++;
-	}
-	void pop_front()
-	{
-		if (head == nullptr)
-		{
-			cout << "이미 비어있습니다" << endl;
-		}
-		else
-		{
-			Node* delNode = head->next;
-			if (size == 1)
-			{
-				head = nullptr;
-			}
-			else
-			{
-				head->next = delNode->next;
-			}
-			delete delNode;
-			size--;
-		}
-	}
-	void empty()
-	{
-		return size == 0;
-	}
-	void remove(T data)
-	{
-		Node* prevNode = head;
-		Node* delNode = head->next;
-		while (delNode != head)
-		{
-			if (delNode->data == data)
-			{
-				prevNode->next = delNode->next;
-				delete delNode;
-				delNode = prevNode->next;
-				size--;
-			}
-			else
-			{
-				prevNode = delNode;
-				delNode = delNode->next;
+				container[index] = data;
 			}
 		}
 	}
 };
 
-
 int main()
 {
-	CircleList<int> list;
-	list.push_back(10);
-	list.push_back(20);
-	list.push_back(40);
-	list.push_back(80);
-	list.push_front(5);
+	Vector<int> vector;
+	vector.push_back(10);
+	
 	return 0;
 }
