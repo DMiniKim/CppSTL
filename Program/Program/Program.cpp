@@ -2,90 +2,81 @@
 
 using namespace std;
 
-template <typename T>
-class Vector
+class String
 {
 private:
-	int dataSize;				// data가 저장된 벡터 크기
-	int capacity;			    // 최대 용량
-
+	int size;
+	char* pointer;
 public:
-	T* container;				// 자료들 시작 주소 담는 포인터
-	Vector()
+	String()
 	{
-		dataSize = 0;
-		capacity = 0;
-		container = nullptr;
+		size = 0;
+		pointer = nullptr;
 	}
-	~Vector()
+	void operator = (const char* c)
 	{
-		if (container != nullptr)
+		size = strlen(c) + 1;
+		if (pointer == nullptr)
 		{
-			delete[] container;
-		}
-	}
-	void resize(int newSize)
-	{
-		// 1. capacity에 새로운 size값을 저장.
-		// 2. 새로운 포인터 변수를 생성, 새롭게 만들어진
-		//	  메모리 공간을 가리키도록 한다.
-		// 3. 새로운 메모리 공간의 값을 초기화한다.
-		// 4. 기존 배열에 있는 값을 복사해서 새로운 배열에 넣어줌.
-		// 5. 기존 배열의 메모리를 해제한다.
-		// 6. 기존 배열을 가리키던 포인터 변수의 주소를 새로운 배열의
-		//	  시작 주소로 변경한다.
-
-		capacity = newSize;
-
-		T* temp = new T[capacity];
-
-		for (int i = 0; i < capacity; i++)
-		{
-			temp[i] = NULL;
-		}
-		for (int i = 0; i < dataSize; i++)
-		{
-			temp[i] = container[i];
-		}
-		if (container != nullptr)
-		{
-			delete[] container;
-		}
-		container = temp;
-	}
-	void push_back(T data)
-	{
-		if (container == nullptr)
-		{
-			resize(1);
-			container[capacity] = data;
-
-			dataSize++;
-		}
-		else
-		{
-			if (capacity == dataSize)
+			pointer = new char[size];
+			for (int i = 0; i < size; i++)
 			{
-				resize(capacity * 2);
-				push_back(data);
+				pointer[i] = c[i];
 			}
-			else
+		}
+		else if (pointer != nullptr)
+		{
+			char* temp = new char[size];
+			for (int i = 0; i < size; i++)
 			{
-				int index = 0;
-				while (container[index] != NULL)
-				{
-					index++;
-				}
-				container[index] = data;
+				temp[i] = c[i];
 			}
+			delete[] pointer;
+			pointer = temp;
+		}
+
+	}
+	const int& Length()
+	{
+		return size;
+	}
+	const char& operator[](const int& index)
+	{
+		return pointer[index];
+	}
+	void Find(const char* c)
+	{
+
+	}
+	void Print()
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << pointer[i];
+		}
+		cout << endl;
+	}
+	~String()
+	{
+		if (pointer != nullptr)
+		{
+			delete[] pointer;	
 		}
 	}
 };
 
+
 int main()
 {
-	Vector<int> vector;
-	vector.push_back(10);
-	
+	String str;
+	str = "League Of Legend";
+	str.Print();
+	str = "Lost Ark";
+	str.Print();
+	cout << "====================================" << endl;
+	for (int i = 0; i < str.Length(); i++)
+	{
+		cout << str[i];
+	}
 	return 0;
 }
