@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|solutionrelative:Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8043D3DD-A206-49F4-9A67-3AA43BE31D82}|Class 04th ( Vector )\\Class 04th ( Vector ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 04th ( Vector )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8043D3DD-A206-49F4-9A67-3AA43BE31D82}|Class 04th ( Vector )\\Class 04th ( Vector ).vcxproj|solutionrelative:Class 04th ( Vector )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 04th ( Vector )\\Source.cpp",
-              "RelativeDocumentMoniker": "Class 04th ( Vector )\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 04th ( Vector )\\Source.cpp",
-              "RelativeToolTip": "Class 04th ( Vector )\\Source.cpp",
-              "ViewState": "AgIAADsAAAAAAAAAAIAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-18T06:31:26.85Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,7 +24,7 @@
               "RelativeDocumentMoniker": "Program\\Program.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp",
               "RelativeToolTip": "Program\\Program.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAIAxwEQAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:10.402Z",
               "EditorCaption": ""
