@@ -6,94 +6,140 @@ using namespace std;
 
 template <typename T>
 
-class Queue
+class PriorityQueue
 {
 private:
-	
-	int front;
-	int rear;
-	T arr[SIZE];
+	int index;
+	int capacity;
+	T* container;
 public:
-	Queue()
+	PriorityQueue()
 	{
-	
-		front = 0;
-		rear = 0;
-		for (int i = 0; i < SIZE; i++) arr[i] = NULL;
+		index = 0;
+		capacity = 0;
+		if (container != nullptr)
+		{
+			container = nullptr;
+		}
 	}
 	void push(T data)
 	{
-		if (rear >= SIZE)
+		if (capacity <= 0)
 		{
-			cout << "linear queue is overflow" << endl;
+			resize(1);
 		}
-		else
+		else if (capacity <= index)
 		{
-			arr[rear++] = data;
+			resize(capacity * 2);
 		}
-		//if (front == rear)
-		//{
-		//	rear = SIZE;
-		//	arr[SIZE - 1] = data;
-		//	front = SIZE - 2;
-		//}
-		//else
-		//{
-		//
-		//}
+		container[index++] = data;
+
+		int child = index - 1;
+		int parent = (child - 1) / 2;
+		while (child > 0)
+		{
+			if (container[parent] < container[child])
+			{
+				swap(container[parent], container[child]);
+			}
+			child = parent;
+			parent = (child - 1) / 2;
+		}
+
 	}
-	bool empty()
+	void resize(int newSize)
 	{
-		return front == rear;
+		capacity = newSize;
+
+		T* temp = new T[capacity];
+
+		for (int i = 0; i < capacity; i++)
+		{
+			temp[i] = NULL;
+		}
+		for (int i = 0; i < index; i++)
+		{
+			temp[i] = container[i];
+		}
+		if (container != nullptr)
+		{
+			delete[] container;
+		}
+		container = temp;
+	}
+	const T& top()
+	{
+		return container[0];
+	}
+	const bool empty()
+	{
+		return index <= 0;
+	}
+	void Print()
+	{
+		for (int i = 0; i < index; i++)
+		{
+			cout << container[i] << endl;
+		}
 	}
 	void pop()
 	{
 		if (empty())
 		{
-			cout << "비어있으니 Push부터 하셈" << endl;
+			cout << "암것도 없음" << endl;
+			return;
 		}
 		else
 		{
-			arr[front++] = NULL; 
+			container[0] = container[--index];
+			container[index] = NULL;
+			int parent = 0;
+			int leftchild = (parent * 2) + 1;
+			int Rightchild = (parent * 2) + 2;
+
+			while ((parent * 2 + 1) < index)
+			{
+				if (container[parent] < container[leftchild])
+				{
+					swap(container[parent], container[leftchild]);
+					parent = leftchild;
+				}
+				else if (container[parent] < container[Rightchild])
+				{
+					swap(container[parent], container[Rightchild]);
+					parent = Rightchild;
+				}
+			}
 		}
 	}
-	const T& Front()
+	~PriorityQueue()
 	{
-		return (empty()) ? 1 :arr[front];
+		if (container != nullptr)
+		{
+			delete container;
+		}
 	}
-	const int& size()
-	{
-		return (rear-front);
-	}
-
 };
 
 
 
 int main()
 {
-	Queue<int> que;
-	que.push(10);
-	que.push(20);
-	que.push(30);
-	que.push(40);
-	que.push(50);
-	que.push(10);
+	PriorityQueue<int> pque;
+	pque.push(10);
+	pque.push(20);
+	pque.push(30);
+	pque.push(40);
+	pque.push(50);
+	pque.push(60);
+	pque.push(70);
+	pque.push(80);
+	pque.push(90);
+	pque.push(100);
+	pque.push(110);
 
-	cout << que.size() << endl;
 
-	cout << que.Front() << endl;
-	que.pop();
-	cout << que.Front() << endl;
-	que.pop();
-	cout << que.Front() << endl;
-	que.pop();
-	cout << que.Front() << endl;
-	que.pop();
-	cout << que.Front() << endl;
-	que.pop();
-	cout << que.Front() << endl;
-	que.pop();
+
 
 	return 0;
 }
