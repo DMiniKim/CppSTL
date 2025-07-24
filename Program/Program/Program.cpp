@@ -1,145 +1,98 @@
 ﻿#include <iostream>
+#include <time.h>
+#include <random>
 
-#define SIZE 5
-
+#define SIZE 6
 using namespace std;
 
-template <typename T>
-
-class PriorityQueue
+template <typename KEY, typename VALUE>
+class HashTable
 {
 private:
-	int index;
-	int capacity;
-	T* container;
+	struct Node
+	{
+		KEY key;
+		VALUE value;
+		Node* next;
+		Node()
+		{
+			key = NULL;
+			value = NULL;
+			next = nullptr;
+		}
+	};
+	struct Bucket
+	{
+		int count;
+		Node* head;
+		Bucket()
+		{
+			count = 0;
+			head = nullptr;
+		}
+	};
+	Bucket bucket[SIZE];
 public:
-	PriorityQueue()
+	template <typename T>
+	const unsigned int& hash_function(T key)
 	{
-		index = 0;
-		capacity = 0;
-		if (container != nullptr)
-		{
-			container = nullptr;
-		}
-	}
-	void push(T data)
-	{
-		if (capacity <= 0)
-		{
-			resize(1);
-		}
-		else if (capacity <= index)
-		{
-			resize(capacity * 2);
-		}
-		container[index++] = data;
+		// 양수만 저장 할 수 있는 자료형 = key->  0 ~ 5
+		unsigned int hashKey = (unsigned int)key % SIZE;
 
-		int child = index - 1;
-		int parent = (child - 1) / 2;
-		while (child > 0)
-		{
-			if (container[parent] < container[child])
-			{
-				swap(container[parent], container[child]);
-			}
-			child = parent;
-			parent = (child - 1) / 2;
-		}
-
+		return hashKey;
 	}
-	void resize(int newSize)
+	Node* create_node(KEY key, VALUE value)
 	{
-		capacity = newSize;
-
-		T* temp = new T[capacity];
-
-		for (int i = 0; i < capacity; i++)
-		{
-			temp[i] = NULL;
-		}
-		for (int i = 0; i < index; i++)
-		{
-			temp[i] = container[i];
-		}
-		if (container != nullptr)
-		{
-			delete[] container;
-		}
-		container = temp;
+		Node* newNode = new Node;
+		newNode->key = key;
+		newNode->value = value;
+		return newNode;
 	}
-	const T& top()
+	void insert(KEY key, VALUE value)
 	{
-		return container[0];
-	}
-	const bool empty()
-	{
-		return index <= 0;
-	}
-	void Print()
-	{
-		for (int i = 0; i < index; i++)
+		unsigned int tempHashkey = hash_function(key);
+		Node* newNode = create_node(key, value);
+		if (bucket[tempHashkey].count == 0)
 		{
-			cout << container[i] << endl;
-		}
-	}
-	void pop()
-	{
-		if (empty())
-		{
-			cout << "암것도 없음" << endl;
-			return;
+			bucket[tempHashkey].head = newNode;
 		}
 		else
 		{
-			container[0] = container[--index];
-			container[index] = NULL;
-			int parent = 0;
-			int leftchild = (parent * 2) + 1;
-			int Rightchild = (parent * 2) + 2;
-
-			while ((parent * 2 + 1) < index)
-			{
-				if (container[parent] < container[leftchild])
-				{
-					swap(container[parent], container[leftchild]);
-					parent = leftchild;
-				}
-				else if (container[parent] < container[Rightchild])
-				{
-					swap(container[parent], container[Rightchild]);
-					parent = Rightchild;
-				}
-			}
+			newNode->next = bucket[tempHashkey].head;
+			bucket[tempHashkey].head = newNode;
 		}
+		bucket[tempHashkey].count++;
+		// 로그
+		cout << "Log :" << bucket[tempHashkey].head->key << "\t" << bucket[tempHashkey].head->value << endl;
 	}
-	~PriorityQueue()
+	void erase()
 	{
-		if (container != nullptr)
+
+	}
+	~HashTable()
+	{
+		for (int i = 0; i < SIZE; i++)
 		{
-			delete container;
+			Node* nextNode = bucket[i].head;
+			Node* delNode = bucket[i].head;
+			while (delNode != nullptr)
+			{
+				nextNode = delNode->next;
+				delete delNode;
+				delNode = nextNode;
+			}
+			if (bucket[i].head != nullptr)	bucket[i].head = nullptr;
 		}
 	}
 };
 
-
-
 int main()
 {
-	PriorityQueue<int> pque;
-	pque.push(10);
-	pque.push(20);
-	pque.push(30);
-	pque.push(40);
-	pque.push(50);
-	pque.push(60);
-	pque.push(70);
-	pque.push(80);
-	pque.push(90);
-	pque.push(100);
-	pque.push(110);
-
-
-
+	HashTable<const char*, int> ht;
+	ht.insert("KDKDKDKDSKDK",24123525);
+	ht.insert("208730tjss", 16542589);
+	ht.insert("s;fjlgksjkwj", 22222222);
+	ht.insert("K", 25);
 
 	return 0;
 }
