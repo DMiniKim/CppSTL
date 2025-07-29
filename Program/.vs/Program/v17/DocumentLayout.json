@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|solutionrelative:Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B17845A-8D88-4B3F-AA91-486303BFC3B5}|Class 10th ( Hash Table )\\Class 10th ( Hash Table ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 10th ( Hash Table )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B17845A-8D88-4B3F-AA91-486303BFC3B5}|Class 10th ( Hash Table )\\Class 10th ( Hash Table ).vcxproj|solutionrelative:Class 10th ( Hash Table )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 978,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 10th ( Hash Table )\\Source.cpp",
-              "RelativeDocumentMoniker": "Class 10th ( Hash Table )\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 10th ( Hash Table )\\Source.cpp",
-              "RelativeToolTip": "Class 10th ( Hash Table )\\Source.cpp",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAQwG4AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-25T05:11:54.854Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,7 +24,7 @@
               "RelativeDocumentMoniker": "Program\\Program.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp",
               "RelativeToolTip": "Program\\Program.cpp",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAcwIoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwEgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:10.402Z",
               "EditorCaption": ""
@@ -52,6 +35,10 @@
           "DockedWidth": 446,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
