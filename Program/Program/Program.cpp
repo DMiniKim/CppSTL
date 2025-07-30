@@ -1,87 +1,64 @@
-﻿#include <iostream>
+﻿#include<iostream>
 
 using namespace std;
-
-#define SIZE 10
-
-template<typename T>
-
-class AdjacencyList
+template <typename T>
+class Set
 {
 	struct Node
 	{
 		T data;
-		Node* next;
-		Node(T data, Node* link = nullptr)
-		{
-			this->data = data;
-			next = link;
-		}
+		Node* left;
+		Node* right;
+		Node(T _data, Node* left = nullptr, Node* right = nullptr) { data = _data; }
+		~Node() { cout << "Node is Delete" << endl; }
 	};
-	int size;			// 정점 개수
-	T vertex[SIZE];		// 정점 집합
-	Node* list[SIZE];	// 인접 리스트
-
+	Node* root;
+	int nodeCount;
 public:
-	AdjacencyList() :size(0)
+	Set() : root(nullptr), nodeCount(0) {};
+	void insert(T data)
 	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			list[i] = nullptr;
-			vertex[i] = NULL;
-		}
+		root = insertSupport(data, root);
 	}
-	void push(T data)
+	Node* insertSupport(T data, Node* currentRoot)
 	{
-		if (size > SIZE)
+		Node* currentNode = currentRoot;
+		if (currentNode == nullptr)
 		{
-			cout << "AdjacencyList is Overflow" << endl;
+			nodeCount++;
+			return new Node(data);
+		}
+		else if (currentNode->data < data)
+		{
+			currentNode->right = insertSupport(data, currentNode->right);
+		}
+		else if (currentNode->data > data)
+		{
+			currentNode->left = insertSupport(data, currentNode->left);
 		}
 		else
 		{
-			vertex[size++] = data;
+			cout << "뭔가 잘못 된 상태입니다 " << endl;
 		}
+		return currentNode;
 	}
-	void edge(int i, int j)
+	void release(Node* root)
 	{
+		if (root == nullptr) return;
+		release(root->left);
+		release(root->right);
+		delete root;
 
-		if (size <= 0)
-		{
-			cout << "Edge List is Empty" << endl;
-		}
-		else if (i >= size || j >= size)
-		{
-			cout << "index is out of range" << endl;
-		}
-		else
-		{
-			list[i] = new Node(vertex[j], list[i]);
-			list[j] = new Node(vertex[i], list[j]);			
-		}
 	}
-	//~AdjacencyList()
-	//{
-	//	for (int i = 0; i < SIZE; i++)
-	//	{
-	//		if (list[i] != nullptr)
-	//		{
-	//			delete[] list[i];		// 이게 가능한 이유는 포인트 배열이라서 해당 배열에 모든 메모리를 
-	//									// delete 할 수 있기 때문이다.
-	//		}
-	//	}
-	//}
+	~Set()
+	{
+		Node* delNode = root;
+	}
+
 };
+
 
 int main()
 {
-	AdjacencyList<char> list;
-	list.push('A');
-	list.push('B');
-	list.push('C');
-	list.push('D');
-	list.edge(0, 1);
-	list.edge(3, 2);
-	list.edge(1, 3);
-	list.edge(0, 3);
 	return 0;
 }

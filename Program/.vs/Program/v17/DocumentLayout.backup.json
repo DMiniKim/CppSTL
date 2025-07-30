@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FF55FC84-C735-4330-9886-BEE83AEDBD8B}|Program\\Program.vcxproj|solutionrelative:Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D9C582C-5E3C-4273-8A16-B0FCE9D4AA1D}|Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1D9C582C-5E3C-4273-8A16-B0FCE9D4AA1D}|Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).vcxproj|solutionrelative:Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9969B856-7B09-4C57-9AB6-6B3C744FA152}|Class 11th ( Adjacency Matrix )\\Class 11th ( Adjacency Matrix ).vcxproj|C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 11th ( Adjacency Matrix )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9969B856-7B09-4C57-9AB6-6B3C744FA152}|Class 11th ( Adjacency Matrix )\\Class 11th ( Adjacency Matrix ).vcxproj|solutionrelative:Class 11th ( Adjacency Matrix )\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 978,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class 12th ( Adjacency List ).cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp",
+              "RelativeDocumentMoniker": "Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp",
+              "RelativeToolTip": "Class 12th ( Adjacency List )\\Class 12th ( Adjacency List ).cpp",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAqwG4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-30T04:45:13.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 11th ( Adjacency Matrix )\\Source.cpp",
+              "RelativeDocumentMoniker": "Class 11th ( Adjacency Matrix )\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Class 11th ( Adjacency Matrix )\\Source.cpp",
+              "RelativeToolTip": "Class 11th ( Adjacency Matrix )\\Source.cpp",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAwwKkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-30T04:13:21.698Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "Program\\Program.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\CppSTL\\Program\\Program\\Program.cpp",
               "RelativeToolTip": "Program\\Program.cpp",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwEgAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:10.402Z",
               "EditorCaption": ""
