@@ -117,7 +117,7 @@ public:
 		}
 		else
 		{
-			while (delnode != nullptr)
+			while (delNode != nullptr)
 			{
 				if (delNode->key == key)
 				{

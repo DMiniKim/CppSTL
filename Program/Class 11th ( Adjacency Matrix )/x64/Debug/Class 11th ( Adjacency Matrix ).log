@@ -1,0 +1,7 @@
+﻿  Source.cpp
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 11th ( Adjacency Matrix )\Source.cpp(140,4): error C2760: 구문 오류: 여기서 '}'은(는) 예상치 못한 오류였습니다. 예상된 오류는 ';'였습니다
+      C:\Users\Administrator\Desktop\CppSTL\Program\Class 11th ( Adjacency Matrix )\Source.cpp(140,4):
+      템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+          C:\Users\Administrator\Desktop\CppSTL\Program\Class 11th ( Adjacency Matrix )\Source.cpp(11,7):
+          클래스 템플릿 'ADjacencyMatrix'을(를) 컴파일하는 동안
+  

@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 05th ( String )\Source.cpp(18,20): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 05th ( String )\Source.cpp(49,14): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 05th ( String )\Source.cpp(68,11): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 05th ( String )\Source.cpp(41,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+  Class 05th ( String ).vcxproj -> C:\Users\Administrator\Desktop\CppSTL\Program\x64\Debug\Class 05th ( String ).exe

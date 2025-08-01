@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 07th ( Linear Queue )\Source.cpp(62,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+C:\Users\Administrator\Desktop\CppSTL\Program\Class 07th ( Linear Queue )\Source.cpp(66,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+  Class 07th ( Linear Queue ).vcxproj -> C:\Users\Administrator\Desktop\CppSTL\Program\x64\Debug\Class 07th ( Linear Queue ).exe
